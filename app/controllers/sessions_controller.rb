@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     # 1. try to find the user by their unique identifier
     @user = User.find_by({"email" => params["email"] })
     # 2. if the user exists -> check if they know their password
-    if @user
+    if @user != nil
     # 3. if they know their password -> login is successful
     if BCrypt::Password.new(@user["password"]) == params["password"]
       # assign a cookie
