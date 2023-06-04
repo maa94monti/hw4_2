@@ -1,15 +1,19 @@
 <h1>Places I've Been</h1>
 
-<ul>
-  <% for place in @places %>
-    <% if @current_user != nil %>
-      <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
-    <% end %>
-  <% end %>
-</ul>
 
-<p>
-  <% if @current_user != nil %>
-  <a href="/places/new">Add a new place</a>
-  <% end %>
-</p>
+<% if @current_user != nil %>
+  <a href="/places/new"  class="btn btn-outline-primary .text-nowrap">Add a new place</a>
+<% end %>
+
+<div class="row">
+
+  <% for place in @places %>
+  <div class="col-md-3 col-sm-6">
+    
+    <% if @current_user != nil %>
+      <a href="/places/<%= place["id"] %>"><%= place["name"] %></a>
+      <% end %>
+    <% end %>
+  </div>   
+
+</div>
