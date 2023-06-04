@@ -18,8 +18,8 @@
   <% for place in @places %>
     <% if @current_user != nil %>
     <a href="/places/<%= place["id"] %>"><%= place["name"] %></a>
-      <% end %>
     <% end %>
+  <% end %>
 
 </div>   
 
